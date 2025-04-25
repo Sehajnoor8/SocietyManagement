@@ -1,0 +1,715 @@
+/*------------------------------------------------------------------
+* Project:        Realvilla - Modern Real Estate & Property HTML Templates
+* Author:         HtmlDesignTemplates
+* URL:            https://themeforest.net/user/htmldesigntemplates
+* Created:        03/05/2025
+-------------------------------------------------------------------*/
+
+/* 
+1.Header CSS
+2.Banner CSS
+3.Service CSS
+4.About Us CSS
+5.Category CSS
+6.Properties CSS
+7.Listing CSS
+8.Why Us CSS
+9.Article CSS
+10.Process CSS
+11.Faq CSS
+12.Review CSS
+13.Footer CSS
+14.About US page CSS
+15.Listing page CSS
+16.Blog page CSS 
+17.Faq page CSS 
+18.Review page CSS 
+19.Error page CSS 
+*/
+
+/* Header CSS */
+header {
+  margin-bottom: -145px;
+}
+
+.header-top .overlay {
+  background-color: #FFFFFF38;
+  opacity: .5;
+}
+
+.header-socials i{
+  height: 33px;
+  width: 33px;
+  line-height: 33px;
+  transition: all .3s ease-in-out;
+}
+
+.header-socials a:hover i {
+  background-color: #EB6650;
+  transition: all .3s ease-in-out;
+}
+
+.navbar-nav .nav-link{
+  padding: 13px 20px;
+  color: #fff;
+}
+
+.navbar-nav .nav-item.no-after::after {
+  display: none;
+}
+
+.dropdown-menu>li>a {
+  font-size: 16px;
+  padding: 12px 30px !important;
+}
+
+.dropdown-menu>li{
+  border-bottom: 1px dashed #87878726;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.show{
+  color: #EB6650;
+}
+
+.dropdown-menu>li>a:hover{
+  background-color: #EB6650;
+  color: #ffffff;
+}
+
+@media (min-width: 1180px) {
+  .navbar-nav .dropdown-menu{
+    position: absolute;
+    top: auto;
+  }
+
+  .dropdown-menu{
+    display: block;
+    opacity: 0;
+    visibility:hidden;
+  }
+
+  .dropdown:hover>.dropdown-menu {
+    opacity: 1 ;
+    visibility: visible;
+    transition:all .3s ease-in-out;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+  }
+
+  ul.dropdown-menu {
+    max-height: 600px !important; 
+    overflow-y: auto !important;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .navbar-nav .nav-link.active{
+    color: #EB6650;
+  }
+
+  .dropdown-item.active{
+    background-color: #EB6650;
+  }
+}
+
+@media (max-width: 1100px){
+  .slicknav_nav .slicknav_item a{
+    pointer-events: none;
+  }
+
+  .slicknav_nav .slicknav_arrow{
+    pointer-events: auto;
+  }
+
+  div#slicknav-mobile {
+    display: block;
+  }
+
+  .header-top, .navbar-button, .navbar-sticky-in, #responsive-menu {
+    display: none;
+  }
+
+  .slicknav_menu {
+    display: block;
+  }
+
+  .nav-link{
+    padding: 10px 30px !important;
+    margin: 0 !important;
+  }
+
+  .slicknav_btn{
+    position: absolute;
+    right: 70px;
+  }
+
+  .slicknav_btn.slicknav_open:before, .slicknav_btn.slicknav_collapsed:before {
+    left : 0;
+    top: 20px;
+    background-color: #EB6650 ;
+    padding: 8px;
+    position: absolute;
+  }
+
+  .slicknav_nav {
+    top: 60px;
+    left: 0;
+    background-color: #F5F5F5;
+    position: absolute;
+    height: 270px;
+    overflow: auto;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12);
+  } 
+
+  .slicknav_nav a:hover, li.nav-item.dropdown.slicknav_parent.slicknav_open > a > a {
+    background-color: #EB6650 !important;
+    color: #fff;
+  }
+
+  .slicknav_nav a, .dropdown-menu>li>a{
+    font-size: 16px;
+    background-color: #F5F5F5;
+    color: #676767;
+    border-bottom: 1px dashed #87878726;
+  }
+
+  .dropdown-menu>li>a{
+    padding-left: 40px !important;
+  }
+  
+  .dropdown-toggle::after{
+    display: none;
+  }
+
+  .slicknav_nav .active, .fa-angle-up:before{
+    background-color: #EB6650;
+    color: #fff;
+  }
+}
+
+/* Popup hidden by default */
+#search1 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#search1 input{
+width: 400px;
+}
+
+#search1 input::placeholder{
+  color: #fff;
+}
+
+#search1.open {
+  display: flex;
+}
+
+#search1 .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Banner CSS */
+.banner, .breadcrumb{
+  background-image: url(../images/office-building-2023-11-27-05-26-04-utc.jpg);
+  background-color: #25212F;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.banner .overlay, .breadcrumb .overlay {
+  background-color: transparent;
+  background-image: radial-gradient(at top center, #0C0C0E 0%, #25212F 100%);
+  opacity: .9;
+}
+
+.banner-inner .overlay {
+  background-image: linear-gradient(180deg, #FFFFFF00 0%, #25212F 100%);;
+}
+
+.banner-inner img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.banner-inner {
+  margin-bottom: -50px;
+}
+
+.spin {
+  display: inline-block;
+  animation: spin 3s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  40% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Service CSS */
+.service-icon img{
+  width: 36px;
+  height: 36px;
+}
+
+.service-icon{
+  width: 60px;
+  height: 60px;
+}
+
+@media (max-width: 976px){
+  .service-box2, .service-box1{
+    border-right: none !important;
+    border-bottom: 1px dashed #25212F2B !important;
+  }
+}
+
+/* About US CSS */
+
+.exp-box {
+  bottom: -30px;
+  left: 30px;
+}
+
+.client-box img {
+  width: 60px;
+  height: 60px;
+  margin-left: -15px;
+}
+
+.client-box {
+  bottom: -25px;
+  right: -25px;
+}
+
+@media (max-width: 1200px){
+  .client-box, .exp-box {
+    position: static !important;
+  }
+
+  .about .body-right, .about .title-right {
+    margin-left: 0 !important;
+  }
+
+  .about-inner {
+    padding-bottom: 0 !important;
+  }
+
+  .about {
+    padding-bottom: 100px !important;
+  }
+}
+
+.about-list img, .other-services img {
+  height: 14px;
+  width: 14px;
+}
+
+.about .overlay{
+  background-image: url(../images/R-e1706170595.png);
+  background-repeat: repeat-x;
+  background-size: 28% auto;
+  background-position: bottom;
+  background-color: transparent;
+  opacity: 0.12;
+}
+
+/* Category CSS */
+
+.category-icon img{
+  height: 36px;
+  width: 36px;
+}
+
+.category {
+  background-image: linear-gradient(90deg, #F5F5F5 34%, #FFFFFF00 0%);
+}
+
+@media (max-width: 1200px){
+  .category {
+    background-image: none;
+    padding: 0 !important;
+  }
+}
+
+/* Properties CSS */
+.property-info {
+  margin-top: -100px;
+}
+
+/* Listing CSS */
+.listing .overlay {
+  background-image: linear-gradient(180deg, #FFFFFF00 60%, #EB665030 0%);
+  background-color: transparent;
+  opacity: .5;
+  z-index: -1;
+}
+
+@media (max-width: 996px){
+  .listing-inner {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* Why Us CSS */
+.why-us-inner{
+  background-image: linear-gradient(180deg, #25212F 0%, #0C0C0E 100%);
+  margin-top: -40px;
+}
+
+.why-us .section-left img{
+  margin-top: -20%;
+}
+
+@media (max-width: 996px){
+  .why-us-inner, .why-us .section-left img {
+    margin: 0;
+  }
+
+  .why-us-inner{
+    padding: 50px 30px 50px 30px !important;
+    border: none !important;
+  }
+
+  .why-us .service-icon{
+    margin: auto !important;
+    margin-bottom: 15px !important;
+  }
+
+  .counter-wrapper .row > .col-md-6:nth-child(2) .counter-box {
+    border: none !important;
+  }
+}
+
+@media (max-width: 767px){
+  .counter-box {
+    padding-bottom: 20px;
+    border-right: none !important;
+    border-bottom: 1px solid #FFFFFF2E;
+  }
+
+  .counter-wrapper .row > .col-md-6:nth-child(2) .counter-box {
+    border-bottom: 1px solid #FFFFFF2E !important;
+  }
+
+  .why-us-inner{
+    padding: 0px 20px 50px 20px !important;
+  }
+}
+
+.why-us-inner-service{
+  margin-top: -40px;
+  border-top:  1px dashed #25212F2B !important;
+}
+
+/* Article CSS */
+.article-image a::after{
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .35), transparent 75%);
+  background-repeat: no-repeat;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  opacity: 1;
+  position: absolute;
+  transition: all .3s ease-in-out;
+  width: 100%;
+}
+
+.article-image a:hover::after {
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+/* Process CSS */
+.process-box h2 {
+  color: white;
+  -webkit-text-stroke: 1px #EB6650; /* Outline color and thickness */
+}
+
+.process{
+  background-image: linear-gradient(180deg, #ffffff 50%, #F5F5F5 0%);
+}
+
+/* Faq CSS */
+.accordion-button:focus, .accordion-button:hover{
+  box-shadow: none !important;
+  z-index: 0;
+}
+
+.faq .accordion-button.collapsed{
+  color: #8b8b8b;
+}
+
+.faq .accordion-button:not(.collapsed){
+  background-color: #fff;
+  color: #EB6650 !important;
+}
+
+.faq .accordion-button::after{
+  content: "\f063" !important;
+  font-family: "FontAwesome" !important;
+  background-image: none;
+}
+
+.faq .accordion-button:not(.collapsed)::after{
+  content: "\f062" !important;
+}
+
+.accordion {
+  --bs-accordion-btn-icon-transform: rotate(-360deg);
+} 
+
+.faq{
+  background-image: linear-gradient(180deg, #F5F5F5 44%, #ffffff 0%);;
+}
+
+.faq .section-body img {
+  margin-bottom: -50px;
+}
+
+@media (max-width: 996px) {
+  .faq .section-left {
+    padding-bottom: 100px !important;
+  }  
+}
+
+
+/* Review CSS */
+.reviewer-info img{
+  height: 50px;
+  width: 50px;
+}
+
+.contact-banner{
+  margin-left: 30%;
+}
+
+.review, .commitment {
+  background-image: url(../images/house-2023-11-27-05-11-15-utc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.review .overlay, .commitment .overlay {
+  background-image: linear-gradient(90deg, #FFFFFF 17.5%, #FFFFFF00 0%);
+  background-color: transparent;
+}
+
+.contact-banner .overlay{
+  background-color: #25212F;
+  background-image: none !important;
+  opacity: .8;
+}
+
+@media (max-width: 996px){
+  .contact-banner{
+    margin-left: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .review-box {
+    padding-top: 50px !important;
+  }
+
+  .review .overlay, .commitment .overlay {
+    background-image: none
+  }
+
+}
+
+/* @media (max-width: 767px){
+  .review .overlay, .commitment .overlay {
+    background-image: none
+  }
+} */
+
+
+/* Footer CSS */
+footer {
+  background-image: linear-gradient(90deg, #25212F 0%, #0C0C0E 100%);
+}
+
+
+/* ========================================= */
+/*          About US page CSS                */
+/* ========================================= */
+
+/* Agents CSS */
+.agent-socials a i{
+  font-size: 16px;
+  height: 48px;
+  width: 48px;
+  line-height: 48px;
+}
+
+.agent-socials a :hover {
+  background-color: #EB6650;
+  color: #FFFFFF;
+}
+
+.agent-socials a :hover i {
+  border-color: #EB6650 !important;
+}
+
+.agent-image img:hover {
+  opacity: .9;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 767px){
+  .post-navigation {
+    padding: 10px !important;
+  }
+}
+
+
+/* Mission CSS */
+.vision {
+  background-image: linear-gradient(180deg, #FFFFFF00 50%, #F5F5F5 0%);
+}
+
+@media (max-width: 996px){
+  .vision .section-left {
+    padding: 0 !important 
+  }
+}
+
+
+/* ========================================= */
+/*          Listing page CSS                 */
+/* ========================================= */
+.similar-listing .overlay {
+  background-image: linear-gradient(180deg, #EB665030 60%, #FFFFFF00 0%);
+  background-color: transparent;
+  opacity: .5;
+  z-index: -1;
+}
+
+
+/* ========================================= */
+/*             Blog page CSS                 */
+/* ========================================= */
+.quote-image img {
+  height: 100px;
+  width: 100px;
+}
+
+.search-bar a:hover {
+background-color: #C14632;
+}
+
+
+
+
+/* ========================================= */
+/*               Faq page CSS                */
+/* ========================================= */
+
+.aims .accordion-button:not(.collapsed){
+  background-color: #EB6650;
+  color: #fff !important;
+}
+
+.aims .accordion-button::after{
+  content: "\f078" !important;
+  font-family: "FontAwesome" !important;
+  background-image: none;
+}
+
+.aims .accordion-button:not(.collapsed)::after{
+  content: "\f077" !important;
+}
+
+.faq-page .faq {
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
+}
+
+.aims {
+  background-image: linear-gradient(180deg, #F5F5F5 0%, #ffffff 100%);
+}
+
+@media (max-width: 767px){
+  .aims-form{
+    padding: 50px 20px !important;
+  }
+
+  .faq .accordion{
+    padding: 0px 15px !important;
+  }
+}
+
+/* ========================================= */
+/*             Review page CSS               */
+/* ========================================= */
+.review-image img{
+  height: 80px;
+  width: 80px;
+}
+
+.divider-pattern {
+  background: repeating-linear-gradient(-55deg, #FFFFFFBF, #FFFFFFBF 1px, transparent 1px, transparent 6px);
+}
+
+.countdown span{
+  font-size: 80px;
+}
+
+@media (max-width: 992px){
+  .coming-soon span {
+    font-size: 54px;
+  }
+  .coming-soon p{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 800px) and (max-width:996px){
+  .coming-soon{
+    height: 180vh !important;
+  }
+}
+
+@media (max-width: 576px){
+  .coming-soon span {
+    font-size: 42px;
+  }
+}
+
+/* ========================================= */
+/*              Error page CSS               */
+/* ========================================= */
+.error h1 {
+  font-size: 90px;
+  color: #fff;
+  -webkit-text-stroke: 1px #EB6650; /* Outline color and thickness */
+}
