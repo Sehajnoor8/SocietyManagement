@@ -152,8 +152,8 @@ public String getUsers() {
     }
 }
 
-  @GetMapping("/AU")
-public String deleteUser(@RequestParam String id) {
+  @GetMapping("/approve")
+public String approveUser(@RequestParam String id) {
     try {
         ResultSet rs = DBLoader.executeQuery("SELECT * FROM usersignup WHERE Id = '" + id + "'");
         if (rs.next()) {
@@ -168,9 +168,66 @@ public String deleteUser(@RequestParam String id) {
         return "exception";
     }
 }
+ 
+ @GetMapping("/block")
+public String blockUser(@RequestParam String id) {
+    try {
+        ResultSet rs = DBLoader.executeQuery("SELECT * FROM usersignup WHERE Id = '" + id + "'");
+        if (rs.next()) {
+            rs.updateString("Status", "pending");
+            rs.updateRow();
+            return "success";
+        } else {
+            return "fail";
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        return "exception";
+    }
+}
 
 
+      @GetMapping("/getGuards")
+public String getGuards() {
+    try {
+        return new RDBMS_TO_JSON().generateJSON("SELECT * FROM guardsignup");
+    } catch (Exception e) {
+        e.printStackTrace();
+        return "exception";
+    }
+}
 
-     
-   
+  @GetMapping("/approveGuard")
+public String approveGuard(@RequestParam String id) {
+    try {
+        ResultSet rs = DBLoader.executeQuery("SELECT * FROM guardsignup WHERE id = '" + id + "'");
+        if (rs.next()) {
+            rs.updateString("Status", "approved");
+            rs.updateRow();
+            return "success";
+        } else {
+            return "fail";
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        return "exception";
+    }
+}
+ 
+ @GetMapping("/blockGuard")
+public String blockGuard(@RequestParam String id) {
+    try {
+        ResultSet rs = DBLoader.executeQuery("SELECT * FROM guardsignup WHERE id = '" + id + "'");
+        if (rs.next()) {
+            rs.updateString("Status", "pending");
+            rs.updateRow();
+            return "success";
+        } else {
+            return "fail";
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        return "exception";
+    }
+}   
 }

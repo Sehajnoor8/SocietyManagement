@@ -38,8 +38,8 @@
 
                 </style>
                 <script>
-                    function getinfo() {
-                        var url = "/getUsers";
+                    function getinfor() {
+                        var url = "/getGuards";
                         fetch(url)
                                 .then(response => response.text())
                                 .then(ans => renderAsHtml(ans));
@@ -55,34 +55,41 @@
                             s += "<tr>";
                             s += "<td>" + h.Name + "</td>";
                             s += "<td><img src='myuploads/" + h.Photo + "' width='60' height='60' style='object-fit:cover; border-radius:6px;'/></td>";
-                            s += "<td>" + h.Adharcard + "</td>";
                             s += "<td>" + h.PhoneNumber + "</td>";
                             s += "<td>" + h.Email + "</td>";
-                            s += "<td>" + h.FlatId + "</td>";
                             s += "<td>" + h.Status + "</td>";
                             if(h.Status === "pending"){
-                           s += "<td><button onclick=\"approve('" + h.Id + "')\" style='background-color:green; color:white; border:none; padding:5px 10px; cursor:pointer;'>Approve</button></td>";
+                           s += "<td><button onclick=\"approveGuard('" + h.id + "')\" style='background-color:green; color:white; border:none; padding:5px 10px; cursor:pointer;'>Approve</button></td>";
                             }
                             else{
-                             s += "<td><button onclick=\"block('" + h.Id + "')\" style='background-color:red; color:white; border:none; padding:5px 10px; cursor:pointer;'>Block</button></td>";
+                             s += "<td><button onclick=\"blockGuard('" + h.id + "')\" style='background-color:red; color:white; border:none; padding:5px 10px; cursor:pointer;'>Block</button></td>";
                             }
-//                            s += "<td>" + h.Approve + "</td>";
-//                            s += "<td>" + h.Block + "</td>";
                             s += "</tr>";
                         }
 
-                        document.getElementById("user-table-body").innerHTML = s;
+                        document.getElementById("guard-table-body").innerHTML = s;
                     }
 
 
-                    function approve(id)
+                    function approveGuard(id)
                     {
-                        var url = "/AU?id=" + id;
+                        var url = "/approveGuard?id=" + id;
                         fetch(url)
                                 .then(response => response.text())
                                 .then(ans => renderAsHtml2(ans));
                     }
                     function renderAsHtml2(ans)
+                    {
+                        alert(ans);
+                    }
+                     function blockGuard(id)
+                    {
+                        var url = "/blockGuard?id=" + id;
+                        fetch(url)
+                                .then(response => response.text())
+                                .then(ans => renderAsHtml3(ans));
+                    }
+                    function renderAsHtml3(ans)
                     {
                         alert(ans);
                     }
@@ -107,7 +114,7 @@
                                         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet">
 
                                             </head>
-                                            <body onload ="getinfo()">
+                                            <body onload ="getinfor()">
                                                 <!-- Header Section Starts -->
                                                 <header class="position-relative z-2">
                                                     <div class="header-inner">
@@ -248,7 +255,7 @@
                                                             <div class="row align-items-center gy-5">
                                                                 <div class="col-lg-6">
                                                                     <div class="section-title">
-                                                                        <h2 class="text-white">Users</h2>
+                                                                        <h2 class="text-white">Guard</h2>
                                                                         <div class="zig-zag-line m-auto m-lg-1 w-10 bg-orange my-1"></div>
                                                                     </div>
                                                                 </div>
@@ -261,7 +268,7 @@
                                                 <section class="error py-10">
                                                     <div class="container">
                                                         <div class="error-inner text-center w-lg-50 w-md-75 m-auto">
-                                                            <h1 class="poppins">Users</h1>
+                                                            <h1 class="poppins">Guard Signup</h1>
                                                             <div class="search-bar mt-4 d-flex">
 
                                                             </div>
@@ -272,17 +279,14 @@
                                                             <tr>
                                                                 <th>Name</th>
                                                                 <th>Photo</th>
-                                                                <th>AdharCard</th>
                                                                 <th>PhoneNumber</th>
                                                                 <th>Email</th>
-                                                                <th>FlatId</th>
                                                                 <th>Status</th>
                                                                 <th>Action</th>
-                                                                <th>Approve</th>
-                                                                <th>Block</th>
+                                                               
                                                             </tr>
                                                         </thead>
-                                                        <tbody id="user-table-body">
+                                                        <tbody id="guard-table-body">
                                                             <!-- Data rows will be inserted here -->
                                                         </tbody>
                                                     </table>    

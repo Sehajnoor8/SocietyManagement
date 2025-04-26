@@ -8,46 +8,43 @@
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <title>User Signup</title>
+                <title>Guard Signup</title>
                 <script>
                     function add() {
 
                         var name = document.getElementById("name").value;
                         var file = document.getElementById("fil").files[0];
-                        var adhar = document.getElementById("card").value;
                         var phone = document.getElementById("num").value;
                         var email = document.getElementById("email").value;
                         var password = document.getElementById("pass").value;
-                        var flatid = document.getElementById("flatid").value;
+                        
 
-                        var url = "/addUser";
+                        var url = "/addGuard";
                         var formdata = new FormData();
                         formdata.append("name", name);
                         formdata.append("file", file);
-                        formdata.append("adhar", adhar);
                         formdata.append("phone", phone);
                         formdata.append("email", email);
                         formdata.append("password", password);
-                        formdata.append("flatid", flatid);
-
+                      
 
                         fetch(url, {method: "POST", body: formdata})
                                 .then(response => response.text())
-                                .then(ans => renderAsHtml(ans));
+                                .then(ans => renderAsHtml1(ans));
                     }
 
-                    function renderAsHtml(ans) {
-                        var message = document.getElementById("user-message");
+                    function renderAsHtml1(ans) {
+                        var message = document.getElementById("guard-message");
                         message.style.display = "block";
 
                         if (ans === "success") {
-                            alert("User added successfully!");
-                            message.textContent = "User Signup Done.";
+                            alert("Guard added successfully!");
+                            message.textContent = "Guard Signup Done.";
                             message.style.color = "orange";
                             getinfo();
                         } else {
                             alert("Error: " + ans);
-                            message.textContent = "User Signup Failed. Please try again.";
+                            message.textContent = "Guard Signup Failed. Please try again.";
                             message.style.color = "red";
                         }
                     }
@@ -211,13 +208,13 @@
                                                             <div class="row align-items-center gy-5">
                                                                 <div class="col-lg-6">
                                                                     <div class="section-title">
-                                                                        <h2 class="text-white">User Signup</h2>
+                                                                        <h2 class="text-white">Guard Signup</h2>
                                                                         <div class="zig-zag-line m-auto m-lg-1 w-10 bg-orange my-1"></div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-6">
                                                                     <div class="section-body">
-                                                                        <p class="text-white fst-italic h6 lh-base">"Don’t Miss Out — Sign Up in Seconds!"</p>
+                                                                        <p class="text-white fst-italic h6 lh-base">Cras phasellus faucibus provident occaecat praesentium, iusto  nunc cursus! Ac morbi architecto tinc.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -268,11 +265,10 @@
                                                                                 <input type="email" name="email" id="email" placeholder="Email" class="border-0 mb-3 text-white">
                                                                                     <input type="password" name="Password" id="pass" placeholder="Password" class="border-0 mb-3 text-white">
                                                                                         <input type="text" name="PhoneNumber" id="num" placeholder="PhoneNumber" class="border-0 mb-3 text-white">
-                                                                                            <input type="text" name="AdharCard" id="card" placeholder="AdharCard" class="border-0 mb-3 text-white">
                                                                                                 <input type="file" name="Photo" id="fil" placeholder="Photo" class="border-0 mb-3 text-white">
-                                                                                                    <input type="text" name="FlatId" id="flatid" placeholder="FlatId" class="border-0 mb-3 text-white">
-                                                                                                        <button type="button" class="btn btn2 border-0 text-white" onclick="add(event)">Signup</button>
-                                                                                                            <div id="user-message" class="message-area" style="display:none;"></div>
+                                                                                                    <br>
+                                                                                                        <button type="button" class="btn btn2 border-0 text-white" onclick="add()">Sign up</button>
+                                                                                                            <div id="guard-message" class="message-area" style="display:none;"></div>
                                                                                                         </form>
                                                                                                         </div>
                                                                                                         </div>

@@ -23,9 +23,13 @@ public class AdminControllers {
     public String helpers(){
         return "AdminHelpers";
     }
-     @GetMapping("/UserSignupTable")
+     @GetMapping("/AdminUserSignup")
     public String usertable(){
-        return "UserSignupTable";
+        return "AdminUserSignup";
+    }
+     @GetMapping("/AdminGuardSignup")
+    public String guardtable(){
+        return "AdminGuardSignup";
     }
     
 }
